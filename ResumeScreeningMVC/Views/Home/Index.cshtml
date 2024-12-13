@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Upload Resume";
+}
+
+<h1>Upload Resume</h1>
+
+<form asp-action="UploadResume" asp-controller="Home" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">Upload your resume (.docx or .txt):</label>
+        <input type="file" name="file" id="file" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-danger">@ViewBag.Message</div>
+}
